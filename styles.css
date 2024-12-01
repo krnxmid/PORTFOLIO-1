@@ -1,0 +1,229 @@
+/* Global Styles */
+body {
+    font-family: 'Tiny5', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2d2d2d; /* Dark gray background */
+    color: #fff; /* White text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Circular Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: logoAnimation 2s forwards; /* Faster logo animation */
+    width: 100%; /* Ensures it takes up full width */
+    justify-content: center; /* Center logo horizontally */
+}
+
+/* Logo Size and Adjustments */
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #826fd2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    animation: moveLogo 2s forwards; /* Faster movement animation */
+}
+
+/* Adjustments for Mobile Devices */
+@media (max-width: 600px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
+    }
+    .logo-container {
+        margin-left: auto;
+        margin-right: auto; /* Center the logo */
+        text-align: center; /* Ensure the content is centered */
+    }
+
+    .logo {
+        width: 80px; /* Smaller logo for mobile */
+        height: 80px; /* Smaller logo for mobile */
+    }
+
+    .name {
+        font-size: 30px !important; /* Enforce smaller font size on mobile */
+    }
+
+    /* Adjust the width of project cards for mobile */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Show 2 cards per row on mobile */
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem; /* Smaller font size for titles */
+    }
+
+    .card-content p {
+        font-size: 0.8rem; /* Smaller font size for descriptions */
+    }
+}
+
+/* Name Styling with Transition */
+.name {
+    font-size: 70px; /* Font size for your name on desktop */
+    font-family: 'Tiny5', sans-serif; /* Change this to your desired font */
+    font-weight: bold;
+    color: #fff; /* White color for the name */
+    opacity: 0;
+    transform: translateX(10px); /* Initially off-screen */
+    animation: showName 2s 0.1s forwards; /* Faster name appearance with slight delay */
+}
+
+/* Logo Move Animation */
+@keyframes moveLogo {
+    0% {
+        transform: translateX(); /* Initially centered */
+    }
+    100% {
+        transform: translateX(-11px); /* Moves logo to the left */
+    }
+}
+
+/* Name Fade-in Animation */
+@keyframes showName {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Social Links with Acrylic Effect */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    font-size: 30px;
+    color: #fff;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.8; /* Slight opacity for the icons */
+}
+
+.social-icon:hover {
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Email Box */
+.email-box {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1); /* Acrylic effect */
+    padding: 1px 12px; /* Adds space around the email text */
+    border-radius: 15px; /* Rounded corners */
+    margin-top: 2px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the acrylic effect */
+}
+
+.email-box a {
+    color: #fff;  /* White color for email text */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px; /* Font size for the email */
+}
+
+/* Project Cards */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for the acrylic effect */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    color: #fbfbfb; /* Purple for project titles */
+    margin-bottom: 10px;
+}
+
+.card-content p {   
+    font-family: "Trebuchet MS";
+    font-size: 0.9rem;
+    color: #ddd; /* Lighter gray for descriptions */
+}
+
+/* More Projects Section */
+.more-projects {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.more-projects p {
+    font-size: 18px;
+    color: #826fd2; /* Purple color to match the theme */
+    font-weight: bold;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Tiny5', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.png') no-repeat center center fixed; /* Set the background image */
+    background-size: cover; /* Make the background cover the whole screen */
+    color: #fff; /* White text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow-x: hidden;
+}
